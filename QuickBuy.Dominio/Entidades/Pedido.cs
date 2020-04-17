@@ -25,8 +25,8 @@ namespace QuickBuy.Dominio.Entidades
             LimparMensagensValidacao();
             if (!ItensPedido.Any())
                 AdicionarCritica("Crítica! Pedido não pode ficar sem itens de pedidos.");
-            if(string.IsNullOrEmpty(CEP))
-                AdicionarCritica("Crítica! CEP não informado.")
+            if (string.IsNullOrEmpty(CEP))
+                AdicionarCritica("Crítica! CEP não informado.");
         }
     }
 }
