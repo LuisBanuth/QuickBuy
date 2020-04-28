@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using QuickBuy.Repositorio.Contexto;
+using QuickBuy.Dominio.Contratos;
 
 namespace QuickBuy.Web
 {
@@ -26,8 +27,9 @@ namespace QuickBuy.Web
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var connectionString = Configuration.GetConnectionString("MySqlConnection");
-            services.AddDbContext<QuickBuyContexto>(option => option.UseMySql(connectionString, m => m.MigrationsAssembly("QuickBy.Repositorio")));
+            var connectionString = Configuration.GetConnectionString("QuickBuyDB");
+            services.AddDbContext<QuickBuyContexto>(option => option.UseLazyLoadingProxies().UseMySql(connectionString, m => m.MigrationsAssembly("QuickBuy.Repositorio")));
+            services.AddScoped<IProdutoRepositorio, IProdutoRepositorio>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -70,7 +72,7 @@ namespace QuickBuy.Web
 
                 if (env.IsDevelopment())
                 {
-                    //spa.UseAngularCliServer(npmScript: "start");
+                    spa.UseAngularCliServer(npmScript: "start");
                     //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
                 }
             });
