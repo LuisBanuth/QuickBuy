@@ -1,6 +1,6 @@
 {
   "ConnectionStrings": {
-    "QuickBuyDB": "server=localhost;uid=root;pwd=root;database=QuickBuyDB"
+    "QuickBuyDB": "server=remotemysql.com;uid=2NFbBUiMUj;pwd=uc2iwJqPyA;database=2NFbBUiMUj"
   }
 
 }

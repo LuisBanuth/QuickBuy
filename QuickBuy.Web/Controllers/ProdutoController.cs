@@ -2,9 +2,6 @@
 using QuickBuy.Dominio.Contratos;
 using QuickBuy.Dominio.Entidades;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace QuickBuy.Web.Controllers
 {
@@ -23,7 +20,8 @@ namespace QuickBuy.Web.Controllers
             try
             {
                 return Ok(_produtoRepositorio.ObterTodos());
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
