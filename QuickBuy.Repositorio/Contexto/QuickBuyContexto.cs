@@ -9,7 +9,7 @@ namespace QuickBuy.Repositorio.Contexto
     {
 
 
-        public DbSet<Usuario> Usuários { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Pedido> Pedido { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<ItemPedido> ItemPedido { get; set; }

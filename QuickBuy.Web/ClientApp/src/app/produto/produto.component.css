@@ -1,0 +1,11 @@
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Escolher";
+}
+
+.invalid-feedback{
+    display: block;
+}
+
+.valid-feedback {
+  display: block;
+}
