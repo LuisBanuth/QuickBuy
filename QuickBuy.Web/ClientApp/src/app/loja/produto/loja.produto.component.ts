@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { ProdutoServico } from "../../servicos/produto/produto.servico";
+import { Produto } from "../../modelo/produto";
 
 @Component({
   selector: "loja-app-produto",
@@ -8,8 +9,12 @@ import { ProdutoServico } from "../../servicos/produto/produto.servico";
 })
 
 export class LojaProdutoComponent implements OnInit {
+  public produto: Produto
   ngOnInit(): void {
-      throw new Error("Method not implemented.");
+    var produtoDetalhe = sessionStorage.getItem('produtoDetalhe');
+    if (produtoDetalhe) {
+      this.produto = JSON.parse(produtoDetalhe);
+    } 
   }
   constructor(private produtoServico: ProdutoServico) {
 
