@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace QuickBuy.Dominio.Entidades
@@ -10,6 +11,7 @@ namespace QuickBuy.Dominio.Entidades
         public string Senha { get; set; }
         public string Nome { get; set; }
         public string SobreNome { get; set; }
+        public bool EhAdministrador { get; set; }
         public virtual ICollection<Pedido> Pedidos { get; set; }
 
         public override void Validate()
