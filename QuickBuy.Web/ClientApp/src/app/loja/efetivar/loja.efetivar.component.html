@@ -32,12 +32,12 @@
           <div class="card-body">
             <table class="mb-4" style="width: 100%">
               <tr>
-                <td style="width: 100%">Total:</td>
-                <td style="width: 100%; text-align:right">R$ {{total | number:'1.2'}}</td>
+                <td>Total:</td>
+                <td style="text-align:right">R$ {{total | number:'1.2'}}</td>
               </tr>
             </table>
-            <button class="btn btn-danger" style="width: 100%" (click)="efetivarCompra()">Efetivar compra</button>
-            <button class="btn btn-secondary" style="width: 100%" [router]="['/']">Continuar comprando</button>
+            <button class="btn btn-danger mb-2" style="width: 100%" (click)="efetivarCompra()">Efetivar compra</button>
+            <button class="btn btn-secondary" style="width: 100%" [routerLink]="['/']">Continuar comprando</button>
           </div>
         </div>
       </div>
